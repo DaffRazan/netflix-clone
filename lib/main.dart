@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/screens/home_screen.dart';
+import 'package:netflix_clone/screens/nav_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.black),
-      home: const HomeScreen(),
+      home: const NavScreen(),
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/models/content_model.dart';
 import 'package:netflix_clone/widgets/vertical_icon_button.dart';
@@ -43,14 +45,12 @@ class ContentHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               VerticalIconButton(
-                  icon: Icons.add,
-                  title: 'List',
-                  onTap: () => print("My List")),
-              _PlayButton(),
+                  icon: Icons.add, title: 'List', onTap: () => log("My List")),
+              const _PlayButton(),
               VerticalIconButton(
                   icon: Icons.info_outline,
                   title: 'Info',
-                  onTap: () => print("My List")),
+                  onTap: () => log("My List")),
             ],
           ),
         )
@@ -66,7 +66,7 @@ class _PlayButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton.icon(
         padding: const EdgeInsets.fromLTRB(15.0, 5.0, 20.0, 5.0),
-        onPressed: () => print("Play"),
+        onPressed: () => log("Play"),
         color: Colors.white,
         icon: const Icon(Icons.play_arrow, size: 30.0),
         label: const Text(

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/models/content_model.dart';
 
@@ -23,7 +25,7 @@ class Previews extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        Container(
+        SizedBox(
           height: 165.0,
           child: ListView.builder(
               padding: const EdgeInsets.symmetric(
@@ -36,7 +38,7 @@ class Previews extends StatelessWidget {
                 final Content content = contentList[index];
 
                 return GestureDetector(
-                  onTap: () => print(content.name),
+                  onTap: () => log(content.name),
                   child: Stack(
                     alignment: Alignment.center,
                     children: [

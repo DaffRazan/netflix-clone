@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../assets.dart';
@@ -10,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
       color:
           Colors.black.withOpacity((scrollOffset / 350).clamp(0, 1).toDouble()),
       child: SafeArea(
@@ -25,10 +27,9 @@ class CustomAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _AppBarButton(
-                      title: "TV Shows", onTap: () => print("TV Shows")),
-                  _AppBarButton(title: "Movies", onTap: () => print("Movies")),
-                  _AppBarButton(
-                      title: "My List", onTap: () => print("My List")),
+                      title: "TV Shows", onTap: () => log("TV Shows")),
+                  _AppBarButton(title: "Movies", onTap: () => log("Movies")),
+                  _AppBarButton(title: "My List", onTap: () => log("My List")),
                 ],
               ),
             )
@@ -52,7 +53,7 @@ class _AppBarButton extends StatelessWidget {
       onTap: onTap,
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
       ),
     );
